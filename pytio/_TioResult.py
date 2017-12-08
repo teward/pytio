@@ -19,7 +19,7 @@ class TioResult:
         try:
             if field.lower() == "output":
                 return len(self._pieces) > 0
-            elif field.lower()  == "debug":
+            elif field.lower() == "debug":
                 return len(self._pieces) > 1
             else:
                 return False
