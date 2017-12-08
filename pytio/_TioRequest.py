@@ -30,7 +30,7 @@ class TioRequest:
         # type: (AnyStr, bytes) -> None
         self._files.append(TioFile(name, content))
 
-    def add_variable(self, variable: TioVariable):
+    def add_variable(self, variable):
         # type: (TioVariable) -> None
         self._variables.append(variable)
 
