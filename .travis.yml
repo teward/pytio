@@ -1,9 +1,11 @@
 language: python
 sudo: false
 python:
+  - '2.7.14'
   - '3.6.3'
 cache:
   directories:
+    - $HOME/.pyenv
     - $HOME/virtualenv/python*
     - $HOME/.cache/pip
 install:
