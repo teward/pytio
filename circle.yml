@@ -1,6 +1,5 @@
 machine:
   post:
-    - if [[ $(pyenv versions | grep 2.7.14) -eq "" ]] ; then pyenv install 2.7.14 ; fi
     - if [[ $(pyenv versions | grep 3.6.3) -eq "" ]] ; then pyenv install 3.6.3 ; fi
 dependencies:
   cache_directories:
@@ -8,12 +7,10 @@ dependencies:
     - "~/virtualenvs"
     - "~/.cache/pip"
   override:
-    - case $CIRCLE_NODE_INDEX in 0) pyenv local 2.7.10 ;; 1) pyenv local 3.6.3 ;; esac
-    - case $CIRCLE_NODE_INDEX in 0) pip install flake8 --upgrade ;; 1) pip3 install flake8 --upgrade ;; esac
-    - case $CIRCLE_NODE_INDEX in 0) pip install -r requirements.txt --upgrade ;; 1) pip3 install -r requirements.txt --upgrade ;; esac
+    - pyenv local 3.6.3
+    - pip3 install flake8 --upgrade
+    - pip3 install -r requirements.txt --upgrade
 test:
   override:
-      - case $CIRCLE_NODE_INDEX in 0) flake8 . ;; 1) flake8 . ;; esac:
-          parallel: true
-      - case $CIRCLE_NODE_INDEX in 0) python -m unittest -v test_tio ;; 1) python3 -m unittest -v test_tio ;; esac:
-          parallel: true
+      - flake8 .
+      - python3 -m unittest -v test_tio
