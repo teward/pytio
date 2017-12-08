@@ -1,4 +1,4 @@
-## IMAP Lib Extension Module
+## Python TIO.run Interaction Library
 
 ### Basic Information
 
@@ -14,7 +14,7 @@
 |:-----------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | Travis CI   | [![Travis-CI](https://travis-ci.org/teward/pytio.svg?branch=master)](https://travis-ci.org/teward/pytio)                                                  |
 | CircleCI    | [![CircleCI](https://circleci.com/gh/teward/pytio.svg?style=shield)](https://circleci.com/gh/teward/pytio)                                                |
-| AppVeyor    | [![AppVeyor](https://ci.appveyor.com/api/projects/status/nqlp3btyfb1trpgw/branch/master?svg=true)](https://ci.appveyor.com/project/teward/pytio/branch/master) |
+| AppVeyor    | [![AppVeyor](https://ci.appveyor.com/api/projects/status/uvcfb3l6qwttwe72/branch/master?svg=true)](https://ci.appveyor.com/project/teward/pytio/branch/master) |
 
 
 ## Description

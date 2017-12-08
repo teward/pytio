@@ -1,5 +1,5 @@
-IMAP Lib Extension Module
--------------------------
+Python TIO.run Interaction Library
+----------------------------------
 
 Basic Information
 ~~~~~~~~~~~~~~~~~
@@ -144,5 +144,5 @@ project <https://tio.run>`__.
    :target: https://travis-ci.org/teward/pytio
 .. |CircleCI| image:: https://circleci.com/gh/teward/pytio.svg?style=shield
    :target: https://circleci.com/gh/teward/pytio
-.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/nqlp3btyfb1trpgw/branch/master?svg=true
+.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/uvcfb3l6qwttwe72/branch/master?svg=true
    :target: https://ci.appveyor.com/project/teward/pytio/branch/master
