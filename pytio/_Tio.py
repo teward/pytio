@@ -10,14 +10,15 @@ from ._TioResponse import TioResponse
 
 # Version specific import handling.
 if platform.python_version() <= '3.0':
-    import urllib
+    # noinspection PyCompatibility,PyUnresolvedReferences
+    from urllib2 import urlopen
+    # noinspection PyCompatibility,PyUnresolvedReferences
+    from urllib2 import HTTPError, URLError
 else:
     # noinspection PyCompatibility
-    import urllib.request
+    from urllib.request import urlopen
     # noinspection PyCompatibility
-    import urllib.parse
-    # noinspection PyCompatibility
-    import urllib.error
+    from urllib.error import HTTPError, URLError
 
 
 class Tio:
@@ -47,10 +48,10 @@ class Tio:
     def query_languages(self):
         # type: () -> set
         try:
-            response = urllib.request.urlopen(self.json)
+            response = urlopen(self.json)
             rawdata = json.loads(response.read().decode('utf-8'))
             return set(rawdata.keys())
-        except (urllib.error.HTTPError, urllib.error.URLError):
+        except (HTTPError, URLError):
             return set()
         except Exception:
             return set()
@@ -61,10 +62,15 @@ class Tio:
 
     def send_bytes(self, message):
         # type: (bytes) -> TioResponse
-        req = urllib.request.urlopen(self.backend, data=message)
+        req = urlopen(self.backend, data=message)
         reqcode = req.getcode()
         if req.code == 200:
-            if req.info().get_content_type() == 'application/octet-stream':
+            if platform.python_version() >= '3.0':
+                content_type = req.info().get_content_type()
+            else:
+                content_type = req.info()['content-type']
+
+            if content_type == 'application/octet-stream':
                 buf = io.BytesIO(req.read())
                 gzip_f = gzip.GzipFile(fileobj=buf)
                 fulldata = gzip_f.read()

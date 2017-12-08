@@ -1,5 +1,6 @@
 # coding=utf-8
 
+import platform
 import zlib
 from typing import List, AnyStr, Union
 from ._TioFile import TioFile
@@ -65,19 +66,30 @@ class TioRequest:
     def write_variable(self, name, content):
         # type: (AnyStr, AnyStr) -> None
         if content:
-            self._bytes += bytes("V" + name + '\x00' + str(len(content.split(' '))) + '\x00', 'utf-8')
-            self._bytes += bytes(content + '\x00', 'utf-8')
+            if platform.python_version() >= '3.0':
+                self._bytes += bytes("V" + name + '\x00' + str(len(content.split(' '))) + '\x00', 'utf-8')
+                self._bytes += bytes(content + '\x00', 'utf-8')
+            else:
+                self._bytes += bytes("V" + name + '\x00' + str(len(content.split(' '))) + '\x00')
+                self._bytes += bytes(content + '\x00')
 
     def write_file(self, name, contents):
         # type: (AnyStr, AnyStr) -> None
-        if isinstance(contents, str):
+        # noinspection PyUnresolvedReferences
+        if platform.python_version() < '3.0' and isinstance(contents, str):
+            length = len(contents)
+        elif isinstance(contents, str):
             length = len(contents.encode('utf-8'))
         elif isinstance(contents, (bytes, bytearray)):
             length = len(contents)
         else:
             raise ValueError("Can only pass UTF-8 strings or bytes at this time.")
-        self._bytes += bytes("F" + name + '\x00' + str(length) + '\x00', 'utf-8')
-        self._bytes += bytes(contents + '\x00', 'utf-8')
+        if platform.python_version() >= '3.0':
+            self._bytes += bytes("F" + name + '\x00' + str(length) + '\x00', 'utf-8')
+            self._bytes += bytes(contents + '\x00', 'utf-8')
+        else:
+            self._bytes += bytes("F" + name + '\x00' + str(length) + '\x00')
+            self._bytes += bytes(contents + '\x00')
 
     def as_bytes(self):
         # type: () -> bytes

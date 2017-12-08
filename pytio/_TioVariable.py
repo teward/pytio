@@ -7,7 +7,7 @@ class TioVariable:
     _name = str()
     _content = []
 
-    def __init__(self, name: AnyStr, content: List[AnyStr]):
+    def __init__(self, name, content):
         # type: (AnyStr, Union[List[AnyStr], AnyStr]) -> None
         self._name = name
         self._content = content
