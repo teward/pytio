@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 from pytio import __version__ as version
 
 setup(
-    name='imaplibext',
+    name='pytio',
     version=version,
     packages=find_packages(),
     include_package_data=True,
