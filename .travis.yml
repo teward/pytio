@@ -1,0 +1,15 @@
+language: python
+sudo: false
+python:
+  - '2.7'
+  - '3.6'
+cache:
+  directories:
+    - $HOME/virtualenv/python*
+    - $HOME/.cache/pip
+install:
+  - pip install -r requirements.txt --upgrade
+  - pip install flake8 --upgrade
+script:
+  - flake8 .
+  - python -m unittest -v test_tio
