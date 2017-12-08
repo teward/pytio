@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from typing import Optional, Any
+from typing import Optional, Any, Union, AnyStr
 
 
 class TioResponse:
@@ -9,7 +9,8 @@ class TioResponse:
     _result = None
     _error = None
 
-    def __init__(self, code, data: Optional[Any] = None, error: Optional[Any] = None):
+    def __init__(self, code, data=None, error=None):
+        # type: (Union[int, AnyStr], Optional[Any], Optional[Any]) -> None
         self._code = code
         self._data = data
         if data is None:
@@ -26,10 +27,12 @@ class TioResponse:
 
     @property
     def code(self):
+        # type: () -> Union[int, AnyStr]
         return self._code.decode('utf-8')
 
     @property
     def result(self):
+        # type: () -> Optional[AnyStr]
         if self._result:
             return self._result.decode('utf-8')
         else:
@@ -37,6 +40,7 @@ class TioResponse:
 
     @property
     def error(self):
+        # type: () -> Optional[AnyStr]
         if self._error:
             return self._error.decode('utf-8')
         else:
@@ -44,13 +48,17 @@ class TioResponse:
 
     @property
     def raw(self):
+        # type: () -> Any
         return self._data
 
     def get_code(self):
+        # type: () -> Union[int, AnyStr]
         return self.code
 
     def get_result(self):
+        # type: () -> Optional[AnyStr]
         return self.result
 
     def get_error(self):
+        # type: () -> Optional[AnyStr]
         return self.error

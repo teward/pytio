@@ -1,21 +1,24 @@
 # coding=utf-8
 
-from typing import AnyStr, List
+from typing import Any, AnyStr, List
 
 
 class TioResult:
     _pieces = []
 
-    def __init__(self, pieces: List[AnyStr]):
+    def __init__(self, pieces):
+        # type: (List[AnyStr]) -> None
         self._pieces = pieces
 
         raise NotImplementedError
 
     @property
     def pieces(self):
+        # type: () -> List
         return self._pieces
 
-    def has(self, field: AnyStr):
+    def has(self, field):
+        # type: (AnyStr) -> bool
         try:
             if field.lower() == "output":
                 return len(self._pieces) > 0
@@ -27,6 +30,7 @@ class TioResult:
             return False
 
     def get(self, field):
+        # type: (AnyStr) -> Any
         if self.has('output') and field.lower() == "output":
             return self._pieces[0]
         elif self.has('debug') and field.lower() == "debug":

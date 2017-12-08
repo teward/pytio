@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from typing import AnyStr, List
+from typing import AnyStr, List, Union
 
 
 class TioVariable:
@@ -8,19 +8,24 @@ class TioVariable:
     _content = []
 
     def __init__(self, name: AnyStr, content: List[AnyStr]):
+        # type: (AnyStr, Union[List[AnyStr], AnyStr]) -> None
         self._name = name
         self._content = content
 
     @property
     def name(self):
+        # type: () -> AnyStr
         return self._name
 
     @property
     def content(self):
+        # type: () -> List
         return self._content
 
     def get_name(self):
+        # type: () -> AnyStr
         return self.name
 
     def get_content(self):
+        # type: () -> List
         return self.content

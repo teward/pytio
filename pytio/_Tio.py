@@ -2,16 +2,22 @@
 import gzip
 import io
 import json
-# noinspection PyCompatibility
-import urllib.request
-# noinspection PyCompatibility
-import urllib.parse
-# noinspection PyCompatibility
-import urllib.error
+import platform
+from typing import AnyStr, Union
 
 from ._TioRequest import TioRequest
 from ._TioResponse import TioResponse
-from typing import Union
+
+# Version specific import handling.
+if platform.python_version() <= '3.0':
+    import urllib
+else:
+    # noinspection PyCompatibility
+    import urllib.request
+    # noinspection PyCompatibility
+    import urllib.parse
+    # noinspection PyCompatibility
+    import urllib.error
 
 
 class Tio:
@@ -19,6 +25,7 @@ class Tio:
     json = "languages.json"
 
     def __init__(self, url="https://tio.run"):
+        # type: (AnyStr) -> None
         self.backend = url + '/' + self.backend
         self.json = url + '/' + self.json
 
@@ -33,10 +40,12 @@ class Tio:
             yield data
 
     @staticmethod
-    def new_request():
-        return TioRequest
+    def new_request(lang, code):
+        # type: (AnyStr, Union[AnyStr, bytes]) -> TioRequest
+        return TioRequest(lang=lang, code=code)
 
     def query_languages(self):
+        # type: () -> set
         try:
             response = urllib.request.urlopen(self.json)
             rawdata = json.loads(response.read().decode('utf-8'))
@@ -46,10 +55,12 @@ class Tio:
         except Exception:
             return set()
 
-    def send(self, fmt: TioRequest):
+    def send(self, fmt):
+        # type: (TioRequest) -> TioResponse
         return self.send_bytes(fmt.as_deflated_bytes())
 
-    def send_bytes(self, message: bytes):
+    def send_bytes(self, message):
+        # type: (bytes) -> TioResponse
         req = urllib.request.urlopen(self.backend, data=message)
         reqcode = req.getcode()
         if req.code == 200:
@@ -63,6 +74,3 @@ class Tio:
             return TioResponse(reqcode, fulldata, None)
         else:
             return TioResponse(reqcode, None, None)
-
-    def prepare(self, response: Union[bytes, bytearray]):
-        raise NotImplementedError
