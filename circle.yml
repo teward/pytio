@@ -15,5 +15,5 @@ test:
   override:
       - case $CIRCLE_NODE_INDEX in 0) flake8 . ;; 1) flake8 . ;; esac:
           parallel: true
-      - case $CIRCLE_NODE_INDEX in 0) python3 -m unittest -v test_tio ;; 1) python3 -m unittest -v test_tio ;; esac:
+      - case $CIRCLE_NODE_INDEX in 0) python -m unittest -v test_tio ;; 1) python3 -m unittest -v test_tio ;; esac:
           parallel: true
