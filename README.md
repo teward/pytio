@@ -25,7 +25,7 @@ It was inspired by [the Java library to do the same, by SocraticPhoenix over on 
 
 ## Compatibility
 
-This module was written to be Python 3 compatible.  It does not function with Python 2.
+This module was written to be Python 2.7 and 3.0+ compatible.  It does not function with Python 2.6 or earlier.
 
 
 ## Installation / Usage
@@ -36,6 +36,11 @@ This library is available from the PyPI repository.
 
 #### Python 2:
 
+    pip install pytio
+    
+#### Python 3:
+
+    pip3 install pytio
 
 ### Install from Source Code
 
