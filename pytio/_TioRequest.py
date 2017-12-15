@@ -3,7 +3,8 @@
 import platform
 import zlib
 from typing import List, AnyStr, Union
-from .__init__ import TioFile, TioVariable
+from pytio import TioFile
+from pytio import TioVariable
 
 
 class TioRequest:
