@@ -3,7 +3,7 @@ import gzip
 import io
 import json
 import platform
-from typing import AnyStr, Union
+from typing import AnyStr
 
 from ._TioRequest import TioRequest
 from ._TioResponse import TioResponse
