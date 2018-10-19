@@ -28,7 +28,12 @@ class TioResponse:
     @property
     def code(self):
         # type: () -> Union[int, AnyStr]
-        return self._code.decode('utf-8')
+        if isinstance(self._code, int) or isinstance(self._code, str):
+            return self._code
+        elif isinstance(self._code, bytes):
+            return self._code.decode('utf-8')
+        else:
+            return self._code
 
     @property
     def result(self):
