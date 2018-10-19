@@ -8,6 +8,7 @@ class TioResponse:
     _data = None
     _result = None
     _error = None
+    _debug = None
 
     def __init__(self, code, data=None, error=None):
         # type: (Union[int, AnyStr], Optional[Any], Optional[Any]) -> None
@@ -24,6 +25,9 @@ class TioResponse:
         else:
             self._error = None
             self._result = self._splitdata[1]
+
+        if self._splitdata[2] or self._splitdata[2] != b'':
+            self._debug = self._splitdata[2]
 
     @property
     def code(self):
@@ -52,6 +56,12 @@ class TioResponse:
             return None
 
     @property
+    def debug(self):
+        # type: () -> Optional[AnyStr]
+        if self._debug:
+            return self._debug
+
+    @property
     def raw(self):
         # type: () -> Any
         return self._data
@@ -67,3 +77,7 @@ class TioResponse:
     def get_error(self):
         # type: () -> Optional[AnyStr]
         return self.error
+
+    def get_debug(self):
+        # type: () -> Optional[AnyStr]
+        return self.debug
