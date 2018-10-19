@@ -9,7 +9,7 @@ from ._TioVariable import TioVariable
 
 __title__ = 'PyTIO'
 __author__ = 'Thomas Ward'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __copyright__ = '2017 Thomas Ward'
 __license__ = 'AGPLv3+'
 __all__ = ('Tio', 'TioFile', 'TioRequest', 'TioResponse', 'TioResult', 'TioVariable')
