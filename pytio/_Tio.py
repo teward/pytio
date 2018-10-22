@@ -47,8 +47,8 @@ class Tio:
     @staticmethod
     def new_request(*args, **kwargs):
         # type: (Any, Any) -> None
-        raise AttributeError("Tio.new_request() method no longer exists, please use TioRequest() and its constructor "
-                             "to create a new request for Tio.")
+        raise AttributeError("Tio.new_request() method no longer exists as it was removed in version 0.3.0. "
+                             "Please use TioRequest() and its constructor to create a new request for Tio instead.")
 
     def query_languages(self):
         # type: () -> set
