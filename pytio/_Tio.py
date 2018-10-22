@@ -3,7 +3,7 @@ import gzip
 import io
 import json
 import platform
-from typing import AnyStr, Union
+from typing import AnyStr, Any
 
 from ._TioRequest import TioRequest
 from ._TioResponse import TioResponse
@@ -46,9 +46,9 @@ class Tio:
 
     @staticmethod
     def new_request(*args, **kwargs):
-        # type: () -> None
-        raise DeprecationWarning("The Tio.new_request() method is to be removed in a later release; please call "
-                                 "TioRequest and its constructor directly..")
+        # type: (Any, Any) -> None
+        raise AttributeError("Tio.new_request() method no longer exists, please use TioRequest() and its constructor "
+                             "to create a new request for Tio.")
 
     def query_languages(self):
         # type: () -> set
