@@ -71,7 +71,7 @@ class TestTIOResults(unittest.TestCase):
         else:
             # noinspection PyUnresolvedReferences
             self.assertIsInstance(response.error, (unicode, str))
-        self.assertIn('error AC0109: unbalanced quotes detected', response.error)
+        self.assertIn('unbalanced quotes detected', response.error)
 
 
 if __name__ == '__main__':
