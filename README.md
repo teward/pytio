@@ -3,9 +3,6 @@
 **NOTICE!  The GitHub repository is simply a mirror of the GitLab repository.  All development now takes place on GitLab.
 Please do not open issues here on GitHub, they will get no attention at all and not be addressed.**
 
-**CI has been disabled for the time being until we get everything set up on GitLab; the CI information section here will
-return once we have everything configured.**
-
 ### Basic Information 
 
 <table>
@@ -14,12 +11,12 @@ return once we have everything configured.**
 </table>
 
 
-<!-- ### Continuous Integration Status
+### Continuous Integration Status
 
-| CI Provider | Status                                                                                                                                                              |
-|:-----------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Travis CI   | [![Travis-CI](https://travis-ci.org/teward/pytio.svg?branch=master)](https://travis-ci.org/teward/pytio)                                                  |
--->
+| CI Provider | Status                                                                                                                           |
+|:-----------:|:--------------------------------------------------------------------------------------------------------------------------------:|
+| GitLab CI   | [![pipeline status](https://gitlab.com/teward/pytio/badges/master/pipeline.svg)](https://gitlab.com/teward/pytio/commits/master) |                                                 |
+
 
 ## Description
 

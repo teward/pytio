@@ -6,9 +6,24 @@ repository. All development now takes place on GitLab. Please do not
 open issues here on GitHub, they will get no attention at all and not be
 addressed.**
 
-**CI has been disabled for the time being until we get everything set up
-on GitLab; the CI information section here will return once we have
-everything configured.**
+Basic Information
+-----------------
+.. raw:: html
+
+    <table>
+    <tr><td align=center valign=center><a href="http://www.gnu.org/licenses/agpl-3.0" target="_blank"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg" title="AGPL 3.0" /></a></td></tr>
+    <tr><td align=center valign=center><a href="https://pypi.python.org/pypi/pytio" target="_blank"><img src="http://img.shields.io/pypi/v/pytio.svg" title="PyPI Version" /></a></td></tr>
+    </table>
+
+Continuous Integration Status
+-----------------------------
+
+.. raw:: html
+
+    <table>
+    <tr><th align=center valign=center>CI Provider</th><th align=center valign=center>Status</th></tr>
+    <tr><td align=center valign=center>GitLab CI</td><td align=center valign=center><a href="https://gitlab.com/teward/pytio/commits/master"><img alt="pipeline status" src="https://gitlab.com/teward/pytio/badges/master/pipeline.svg" /></a></td>
+    </table>
 
 Description
 -----------
