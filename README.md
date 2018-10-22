@@ -1,6 +1,12 @@
 ## Python TIO.run Interaction Library
 
-### Basic Information
+**NOTICE!  The GitHub repository is simply a mirror of the GitLab repository.  All development now takes place on GitLab.
+Please do not open issues here on GitHub, they will get no attention at all and not be addressed.**
+
+**CI has been disabled for the time being until we get everything set up on GitLab; the CI information section here will
+return once we have everything configured.**
+
+### Basic Information 
 
 <table>
 <tr><td align=center valign=center><a href="http://www.gnu.org/licenses/agpl-3.0" target="_blank"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg" title="AGPL 3.0" /></a></td></tr>
@@ -8,14 +14,12 @@
 </table>
 
 
-### Continuous Integration Status
+<!-- ### Continuous Integration Status
 
 | CI Provider | Status                                                                                                                                                              |
 |:-----------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | Travis CI   | [![Travis-CI](https://travis-ci.org/teward/pytio.svg?branch=master)](https://travis-ci.org/teward/pytio)                                                  |
-| CircleCI    | [![CircleCI](https://circleci.com/gh/teward/pytio.svg?style=shield)](https://circleci.com/gh/teward/pytio)                                                |
-| AppVeyor    | [![AppVeyor](https://ci.appveyor.com/api/projects/status/uvcfb3l6qwttwe72/branch/master?svg=true)](https://ci.appveyor.com/project/teward/pytio/branch/master) |
-
+-->
 
 ## Description
 
@@ -77,11 +81,11 @@ Simply copy the `pytio` package folder into your working directory for your Pyth
 
 ### Where can I report issues or make Feature Requests?
 
-Issues and feature requests can be reported on the [GitHub project][1].
+Issues and feature requests can be reported on the [GitLab project][3].
 
 Be sure to put `[Feature Request]` in the beginning of the  title of your request, if it's a feature request. If you do  
 not, your request may be treated as a bug report instead.
 
 [1]: https://tio.run
 [2]: https://github.com/SocraticPhoenix/TioJ
-[3]: https://github.com/teward/pytio
+[3]: https://gitlab.com/teward/pytio

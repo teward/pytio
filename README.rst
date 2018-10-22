@@ -1,61 +1,14 @@
 Python TIO.run Interaction Library
 ----------------------------------
 
-Basic Information
-~~~~~~~~~~~~~~~~~
+**NOTICE! The GitHub repository is simply a mirror of the GitLab
+repository. All development now takes place on GitLab. Please do not
+open issues here on GitHub, they will get no attention at all and not be
+addressed.**
 
-.. raw:: html
-
-   <table>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td align="center" valign="center">
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td align="center" valign="center">
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </table>
-
-Continuous Integration Status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------+---------------+
-| CI Provider   | Status        |
-+===============+===============+
-| Travis CI     | |Travis-CI|   |
-+---------------+---------------+
-| CircleCI      | |CircleCI|    |
-+---------------+---------------+
-| AppVeyor      | |AppVeyor|    |
-+---------------+---------------+
+**CI has been disabled for the time being until we get everything set up
+on GitLab; the CI information section here will return once we have
+everything configured.**
 
 Description
 -----------
@@ -144,16 +97,9 @@ FAQ
 Where can I report issues or make Feature Requests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issues and feature requests can be reported on the `GitHub
-project <https://tio.run>`__.
+Issues and feature requests can be reported on the `GitLab
+project <https://gitlab.com/teward/pytio>`__.
 
 | Be sure to put ``[Feature Request]`` in the beginning of the title of
   your request, if it's a feature request. If you do
 | not, your request may be treated as a bug report instead.
-
-.. |Travis-CI| image:: https://travis-ci.org/teward/pytio.svg?branch=master
-   :target: https://travis-ci.org/teward/pytio
-.. |CircleCI| image:: https://circleci.com/gh/teward/pytio.svg?style=shield
-   :target: https://circleci.com/gh/teward/pytio
-.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/uvcfb3l6qwttwe72/branch/master?svg=true
-   :target: https://ci.appveyor.com/project/teward/pytio/branch/master
