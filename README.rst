@@ -23,6 +23,9 @@ Continuous Integration Status
     <table>
     <tr><th align=center valign=center>CI Provider</th><th align=center valign=center>Status</th></tr>
     <tr><td align=center valign=center>GitLab CI</td><td align=center valign=center><a href="https://gitlab.com/teward/pytio/commits/master"><img alt="pipeline status" src="https://gitlab.com/teward/pytio/badges/master/pipeline.svg" /></a></td>
+    <tr><td align=center valign=center>AppVeyor</td><td align=center valign=center><a href="https://ci.appveyor.com/project/teward/pytio"><img alt="AppVeyor CI" src="https://ci.appveyor.com/api/projects/status/02ic4swejbae3drc?svg=true" /></a></td></tr>
+    <tr><td align=center valign=center>CircleCI (via GitHub)</td><td align=center valign=center><a href="https://circleci.com/gh/teward/pytio"><img alt="CircleCI" src="https://circleci.com/gh/teward/pytio.svg?style=svg" /></a></td></tr>
+    <tr><td align=center valign=center>TravisCI (via GitHub)</td><td align=center valign=center><a href="https://travis-ci.org/teward/pytio"><img alt="Travis CI" src="https://travis-ci.org/teward/pytio.svg?branch=master" /></a></td></tr>
     </table>
 
 Description
